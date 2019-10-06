@@ -1,0 +1,10 @@
+C:\git\ludumdare45\ld45\ld45\bin_rel\POPULTN.exe.config
+C:\git\ludumdare45\ld45\ld45\bin_rel\POPULTN.exe
+C:\git\ludumdare45\ld45\ld45\bin_rel\POPULTN.pdb
+C:\git\ludumdare45\ld45\ld45\bin_rel\OpenTK.dll
+C:\git\ludumdare45\ld45\ld45\bin_rel\OpenTK.pdb
+C:\git\ludumdare45\ld45\ld45\bin_rel\OpenTK.xml
+C:\git\ludumdare45\ld45\ld45\obj\Release\ld45.csprojAssemblyReference.cache
+C:\git\ludumdare45\ld45\ld45\obj\Release\ld45.csproj.CopyComplete
+C:\git\ludumdare45\ld45\ld45\obj\Release\POPULTN.exe
+C:\git\ludumdare45\ld45\ld45\obj\Release\POPULTN.pdb

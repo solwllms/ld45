@@ -37,7 +37,7 @@ namespace ld45
                 s_pathfind.DoesPathExist(new Point(x, y), new Point(0, 25), new int[] { 0, 2, 6 });
 
             bool onPowerNetwork = false;
-            if (!g_game.powerOut)
+            if (!g_game.powerOut && g_game.powerGens != null)
             {
                 for (int i = 0; i < g_game.powerGens.Length; i++)
                 {

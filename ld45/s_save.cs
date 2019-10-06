@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -25,10 +26,10 @@ namespace ld45
 
                 using (BinaryWriter bin = new BinaryWriter(fs))
                 {
-                    bin.Write(DateTime.Now.ToString());
+                    bin.Write(DateTime.Now.ToString("O"));
                     bin.Write("untitled");
 
-                    bin.Write(g_game.datetime.ToString());
+                    bin.Write(g_game.datetime.ToString("O"));
                     bin.Write(g_game.money);
                     bin.Write(g_game.houseTax);
 
@@ -68,17 +69,21 @@ namespace ld45
                 {
                     using (BinaryReader bin = new BinaryReader(fs))
                     {
-                        DateTime save = DateTime.Parse(bin.ReadString());
+                        DateTime save = DateTime.Parse(bin.ReadString(), CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
                         string name = bin.ReadString();
 
-                        g_game.datetime = DateTime.Parse(bin.ReadString());
+                        g_game.datetime = DateTime.Parse(bin.ReadString(), CultureInfo.InvariantCulture, DateTimeStyles.RoundtripKind);
                         g_game.money = bin.ReadInt32();
                         g_game.houseTax = bin.ReadInt32();
 
-                        g_game.cameraX = bin.ReadInt32();
-                        g_game.cameraY = bin.ReadInt32();
+                        int cx = bin.ReadInt32();
+                        int cy = bin.ReadInt32();
 
                         g_map.size = bin.ReadInt32();
+                        g_map.Init();
+
+                        g_game.cameraX = cx;
+                        g_game.cameraY = cy;
                         for (int x = 0; x < g_map.size; x++)
                         {
                             for (int y = 0; y < g_map.size; y++)
@@ -89,7 +94,6 @@ namespace ld45
                             }
                         }
 
-                        g_map.Init();
                         s_menu.CloseMenu();
                     }
                 }
