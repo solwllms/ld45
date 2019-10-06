@@ -31,7 +31,7 @@ namespace ld45
 
             if (mainMenu)
             {
-                AL.Source(s_audio.source, ALSourceb.Looping, true);
+                if(!s_audio.noSound) AL.Source(s_audio.source, ALSourceb.Looping, true);
                 s_audio.musicPlayer.PlaySFX("music/theme");
                 curLoc = 0;
             }
@@ -43,7 +43,7 @@ namespace ld45
             g_game.mainMenu = false;
 
             s_audio.musicPlayer.Stop();
-            AL.Source(s_audio.source, ALSourceb.Looping, false);
+            if (!s_audio.noSound) AL.Source(s_audio.source, ALSourceb.Looping, false);
         }
 
         static int ticks = 0;

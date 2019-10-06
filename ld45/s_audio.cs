@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Forms;
 
 namespace ld45
 {
@@ -18,27 +19,42 @@ namespace ld45
         public static audioPlayer musicPlayer;
         public static audioPlayer ambientPlayer;
 
+        public static bool noSound = false;
+
         public static void Init()
         {
-            context = new AudioContext();
-            context.MakeCurrent();
+            
+            try {
+                context = new AudioContext();
+            }
+            catch
+            {
+                MessageBox.Show("failed to load openAL! (probably missing openal32.dll!) this will force no sound :(");
+                noSound = true;
+            }
 
-            var device = Alc.OpenDevice(null);
+            if (!noSound)
+            {
+                context.MakeCurrent();
 
-            var version = AL.Get(ALGetString.Version);
-            var vendor = AL.Get(ALGetString.Vendor);
-            var renderer = AL.Get(ALGetString.Renderer);
-            log.WriteLine("starting audio.. (" + version + ", " + vendor + ", " + renderer + ")");
+                var device = Alc.OpenDevice(null);
+
+                var version = AL.Get(ALGetString.Version);
+                var vendor = AL.Get(ALGetString.Vendor);
+                var renderer = AL.Get(ALGetString.Renderer);
+                log.WriteLine("starting audio.. (" + version + ", " + vendor + ", " + renderer + ")");
+
+                source = AL.GenSource();
+            }
 
             sfxPlayer = new audioPlayer();
             musicPlayer = new audioPlayer();
             ambientPlayer = new audioPlayer();
-
-            source = AL.GenSource();
         }
 
         public static void Shutdown()
         {
+            if (noSound) return;
             log.WriteLine("shutting down audio!");
 
             AL.SourceStop(source);
@@ -113,11 +129,13 @@ namespace ld45
 
         public audioPlayer()
         {
+            if (s_audio.noSound) return;
             buffer = AL.GenBuffer();
         }
 
         public void PlaySFX(string name)
         {
+            if (s_audio.noSound) return;
             Stop();
             AL.DeleteBuffer(buffer);
             buffer = AL.GenBuffer();
@@ -137,6 +155,7 @@ namespace ld45
 
         public void Stop()
         {
+            if (s_audio.noSound) return;
             AL.SourceStop(s_audio.source);
         }
 
@@ -148,7 +167,8 @@ namespace ld45
         }
 
         public void Shutdown()
-        {            
+        {
+            if (s_audio.noSound) return;
             AL.DeleteBuffer(buffer);
         }
     }
