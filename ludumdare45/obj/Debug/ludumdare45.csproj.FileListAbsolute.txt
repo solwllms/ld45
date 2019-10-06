@@ -1,0 +1,10 @@
+C:\git\ludumdare45\ludumdare45\bin\ludumdare45.exe.config
+C:\git\ludumdare45\ludumdare45\bin\ludumdare45.exe
+C:\git\ludumdare45\ludumdare45\bin\ludumdare45.pdb
+C:\git\ludumdare45\ludumdare45\bin\OpenTK.dll
+C:\git\ludumdare45\ludumdare45\bin\OpenTK.pdb
+C:\git\ludumdare45\ludumdare45\bin\OpenTK.xml
+C:\git\ludumdare45\ludumdare45\obj\Debug\ludumdare45.csproj.CopyComplete
+C:\git\ludumdare45\ludumdare45\obj\Debug\ludumdare45.exe
+C:\git\ludumdare45\ludumdare45\obj\Debug\ludumdare45.pdb
+C:\git\ludumdare45\ludumdare45\obj\Debug\ludumdare45.csprojAssemblyReference.cache
