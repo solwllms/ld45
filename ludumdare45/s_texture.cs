@@ -1,6 +1,6 @@
 ﻿using System.Drawing;
 
-namespace ludumdare45
+namespace ld45
 {
     public class texture
     {

@@ -6,7 +6,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ludumdare45
+namespace ld45
 {
     class s_save
     {

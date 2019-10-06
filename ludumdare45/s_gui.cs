@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Drawing;
 using System.Linq;
 
-namespace ludumdare45
+namespace ld45
 {
     public class s_gui
     {

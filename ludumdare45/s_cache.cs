@@ -1,7 +1,7 @@
 ﻿using OpenTK.Audio.OpenAL;
 using System.Collections.Generic;
 
-namespace ludumdare45
+namespace ld45
 {
     public struct audioData
     {

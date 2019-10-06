@@ -4,7 +4,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Reflection;
 
-namespace ludumdare45
+namespace ld45
 {
     public class filesystem
     {

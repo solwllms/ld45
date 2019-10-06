@@ -1,7 +1,7 @@
 ﻿using System;
 using System.IO;
 
-namespace ludumdare45
+namespace ld45
 {
     public class vector : IEquatable<vector>
     {

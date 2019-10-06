@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ludumdare45
+namespace ld45
 {
     class s_engine
     {
@@ -30,6 +30,9 @@ namespace ludumdare45
         {
             filesystem.AddDirectory("");
             filesystem.AddDirectory("data");
+
+            s_window.SetTitle("Population - Ludum Dare 45");
+            s_window.SetIcon("icon.png");
 
             s_screen.Init(DEF_SCREEN_WIDTH, DEF_SCREEN_HEIGHT);
             s_gui.Init();
@@ -70,7 +73,8 @@ namespace ludumdare45
             g_game.Update();
             g_game.Render();
 
-            s_gui.Write(fps, 0, 0);
+            // i know this game runs bad, but please.
+            //s_gui.Write(fps, 0, 0);
 
             Point mouse = s_input.GetMousePos();
             //s_gui.DrawCursor((uint)mouse.X, (uint)mouse.Y, 0);

@@ -6,7 +6,7 @@ using OpenTK.Graphics;
 using OpenTK.Graphics.OpenGL;
 using OpenTK.Input;
 
-namespace ludumdare45
+namespace ld45
 {
     class s_window : GameWindow
     {
@@ -73,12 +73,12 @@ namespace ludumdare45
         }
         public static void SetIcon(string tex)
         {
-            /*
             var p = filesystem.Open(tex);
             if (p == null) return;
 
-            _instance.Icon = new Icon(p);
-            p.Close();*/
+            Bitmap bm = new Bitmap(p);
+            _instance.Icon = Icon.FromHandle(bm.GetHicon());
+            p.Close();
         }
         public static void SetTitle(string title)
         {

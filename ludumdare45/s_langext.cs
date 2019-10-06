@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Drawing;
 
-namespace ludumdare45
+namespace ld45
 {
     public static class extensions
     {

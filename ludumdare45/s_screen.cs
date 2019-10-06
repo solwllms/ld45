@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 using OpenTK.Graphics.OpenGL;
 using PixelFormat = OpenTK.Graphics.OpenGL.PixelFormat;
 
-namespace ludumdare45
+namespace ld45
 {    public class s_screen
     {
         public static uint width;

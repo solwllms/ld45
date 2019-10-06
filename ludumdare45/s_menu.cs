@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ludumdare45
+namespace ld45
 {
     class s_menu
     {

@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ludumdare45
+namespace ld45
 {
     class g_game
     {
@@ -48,9 +48,9 @@ namespace ludumdare45
             tileTypes[9] = new tile_solar3();
             tileTypes[10] = new tile_solar4();
 
-            s_menu.OpenMenu(true);
-
             g_map.GenerateFromImage(cache.GetTexture("level"));
+
+            s_menu.OpenMenu(true);
             //g_map.Generate(50);
         }
 

@@ -4,7 +4,7 @@ using System.Drawing;
 using System.Linq;
 using OpenTK.Input;
 
-namespace ludumdare45
+namespace ld45
 {
     public partial class s_input
     {
