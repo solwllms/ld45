@@ -148,7 +148,7 @@ namespace ld45
             {
                 for (int sy = 0; sy < size; sy++)
                 {
-                    if (GetBuildingAt(x + sx, y - sy) != -1) return false;
+                    if (GetBuildingAt(x + sx, y - sy) != -1 || GetWaterAt(x + sx, y - sy)) return false;
                 }
             }
 
