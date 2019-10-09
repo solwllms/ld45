@@ -23,14 +23,15 @@ namespace ld45
 
         public static void Init()
         {
-            
+            noSound = false;
             try {
                 context = new AudioContext();
             }
-            catch
+            catch (Exception e)
             {
-                MessageBox.Show("failed to load openAL! (probably missing openal32.dll!) this will force no sound :(");
-                noSound = true;
+                DialogResult res = MessageBox.Show("failed to load openAL! (probably missing openal32.dll!) continue with no sound?", "an error occured!", MessageBoxButtons.YesNo, MessageBoxIcon.Error);
+                if (res == DialogResult.Yes) noSound = true;
+                else throw e;
             }
 
             if (!noSound)
